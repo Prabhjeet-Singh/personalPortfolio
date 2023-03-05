@@ -10,6 +10,7 @@
 
   <title> News homepage</title>
   <link rel="stylesheet" href="output.css">
+  <script src="/index.js" defer></script>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -24,92 +25,92 @@
   </style>
 </head>
 
-<body class="px-[10vw] py-[5vh]">
+<body class="xl:px-[10vw] md:px-[5vw] py-[5vh] px-[2vw] cursor-default ">
   <!-- 
      NAVBAR
      START
    -->
   <nav class="flex justify-between items-center text-gray-600 ">
     <span class="text-6xl font-extrabold">W.</span>
-    <ul class="flex justify-evenly items-center ">
-      <li class="p-5"><a href="/">Home</a> </li>
-      <li class="p-5"><a href="">New</a></li>
-      <li class="p-5"><a href="">Popular</a></li>
-      <li class="p-5"><a href="">Trending</a></li>
-      <li class="p-5"><a href="">Categories</a></li>
+    <ul class="flex justify-evenly items-center  ">
+      <li class="p-5 hover:text-orange-400"><a href="/">Home</a> </li>
+      <li class="p-5 hover:text-orange-400"><a href="">New</a></li>
+      <li class="p-5 hover:text-orange-400"><a href="">Popular</a></li>
+      <li class="p-5 hover:text-orange-400"><a href="">Trending</a></li>
+      <li class="p-5 hover:text-orange-400"><a href="">Categories</a></li>
     </ul>
   </nav>
   <!-- NAVBAR
      END
  -->
- <!-- center content start  row-6 col-4 -->
-  <div class="grid  grid-rows-[repeat(5,200px)] grid-cols-3 gap-10 mt-10">
+ <!-- center content start  row-5 col-3 -->
+  <div class="grid   sm:grid-cols-3 xl:gap-10 gap-5 mt-10 w-full ">
 
-  <img class="row-start-1 row-end-3 col-start-1 col-end-3 bg-cover h-full" src="/assets/images/image-web-3-desktop.jpg" alt="">
+  <img class="sm:row-start-1 sm:row-end-3 sm:col-start-1 sm:col-end-3 bg-cover h-full" src="/assets/images/image-web-3-desktop.jpg" alt="">
 
-  <div class="row-start-1 row-end-4 col-start-3 flex flex-col justify-evenly h-full px-4 bg-black text-white">
+  <div class="sm:row-start-1 sm:row-end-4 sm:col-start-3 flex flex-col justify-evenly h-full px-4 bg-black text-white order-3">
     <div class="">
 
-      <h2 class="text-4xl font-bold pb-12 text-orange-300 ">New</h2>
-      <h3 class="text-2xl font-bold">Hydrogen VS Electric Cars</h3>
+      <h2 class="text-4xl font-bold pb-12 text-orange-300  ">New</h2>
+      <h3 class="text-2xl font-bold hover:text-orange-300 cursor-pointer">Hydrogen VS Electric Cars</h3>
       <p class="text-gray-400">Will hydrogen-fueled cars ever catch up to EVs?</p>
       <span class=" w-full h-[1px] block bg-gray-400 relative mt-5"></span>
     </div>
 
     <div class="">
-      <h3  class="text-2xl font-bold">The Downsides of AI Artistry</h3>
+      <h3  class="text-2xl font-bold hover:text-orange-300 cursor-pointer">The Downsides of AI Artistry</h3>
       <p class="text-gray-400">What are the possible adverse effects of on-demand AI image generation?</p>
       <span class=" w-full h-[1px] block bg-gray-400 relative mt-5"></span>
     </div>
 
     <div class="">
-      <h3  class="text-2xl font-bold">Is VC Funding Drying Up?</h3>
+      <h3  class="text-2xl font-bold hover:text-orange-300 cursor-pointer">Is VC Funding Drying Up?</h3>
       <p class="text-gray-400">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
       <span class=" w-full h-[1px] block bg-gray-400 relative mt-5"></span>
     </div>
 
   </div>
 
-  <h1 class="text-6xl font-extrabold">The Bright Future of Web 3.0?</h1>
+  <h1 class="text-5xl xl:text-6xl font-extrabold">The Bright Future of Web 3.0?</h1>
 
   <div class="">
     <p class="text-gray-500">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
     But is it really fulfilling its promise?</p>
-  <button class="w-36  h-10 bg-red-400 uppercase mt-7 text-white tracking-widest">read more</button>
+  <button class="w-36  h-10 bg-red-400 hover:bg-black uppercase mt-7 text-white tracking-widest">read more</button>
   </div>
 
   <!-- box 01 start -->
-  <div class="flex">
+  <div class="flex  xl:h-full sm:h-[70%]   xl:mt-0 mt-7 order-4">
 
-    <img src="/assets/images/image-top-laptops.jpg" alt="">
+    <img src="/assets/images/image-top-laptops.jpg" class="w-[40%] xl:w-[50%]  "  alt="">
     <div class="flex flex-col justify-evenly py-4 pl-4">
-      <span class="text-4xl font-bold text-gray-400">01</span>
-      <h3 class="font-bold">Reviving Retro PCs</h3>
-      <p>What happens when old PCs are given modern upgrades?</p>
+      <span class="xl:text-4xl text-3xl font-bold text-gray-400 ">01</span>
+      <h3 class="font-bold hover:text-orange-400 cursor-pointer">Reviving Retro PCs</h3>
+      <p class="sm:text-xs xl:text-base text-base" >What happens when old PCs are given modern upgrades?</p>
     </div>
 
   </div>
   <!-- box 01 end -->
   <!-- box 02  start-->
-  <div class=" flex ">
-    <img src="/assets/images/image-retro-pcs.jpg" alt="">
+  <div class=" flex  xl:h-full sm:h-[70%] xl:mt-0 mt-7  order-5">
+    <img src="/assets/images/image-retro-pcs.jpg" class="w-[40%] xl:w-[50%]  " alt="">
 
     <div  class="flex flex-col justify-evenly py-4 pl-4">
-      <span class="text-4xl font-bold text-gray-400">02</span>
-      <h3 class="font-bold">Top 10 Laptops of 2022</h3>
-      <p>Our best picks for various needs and budgets.</p>
+      <span class="xl:text-4xl text-3xl font-bold text-gray-400 ">02</span>
+      <h3 class="font-bold hover:text-orange-400 cursor-pointer">Top 10 Laptops of 2022</h3>
+      <p class="sm:text-xs xl:text-base text-base">Our best picks for various needs and budgets.</p>
     </div>
 
   </div>
   <!-- box 02 end -->
   <!-- box 03  start-->
-  <div class="flex">
+  <div class="flex  xl:h-full sm:h-[70%] xl:mt-0 mt-7  order-6">
 
-    <img src="/assets/images/image-gaming-growth.jpg" alt="">
+    <img class="w-[40%] xl:w-[50%]  " src="/assets/images/image-gaming-growth.jpg" alt="">
     <div  class="flex flex-col justify-evenly py-4 pl-4">
-      <span class="text-4xl font-bold text-gray-400">03</span>
-      <h3 class="font-bold">The Growth of Gaming</h3>
-      <p>How the pandemic has sparked fresh opportunities.</p>
+      <span class="xl:text-4xl text-3xl font-bold text-gray-400">03</span>
+      <h3 class="font-bold hover:text-orange-400 cursor-pointer">The Growth of Gaming</h3>
+      <p class="sm:text-xs xl:text-base text-base">How the pandemic has sparked fresh opportunities.</p>
     </div>
 
   </div>
@@ -120,7 +121,7 @@
     end
   -->
 
-  <footer class="attribution">
+  <footer class="attribution mt-10">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Prabhjeet Singh</a>.
   </footer>
