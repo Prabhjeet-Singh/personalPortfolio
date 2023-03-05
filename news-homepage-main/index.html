@@ -1,60 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | News homepage</title>
+
+  <title> News homepage</title>
+  <link rel="stylesheet" href="output.css">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
-<body>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
+<body class="px-[10vw] py-[5vh]">
+  <!-- 
+     NAVBAR
+     START
+   -->
+  <nav class="flex justify-between items-center text-gray-600 ">
+    <span class="text-6xl font-extrabold">W.</span>
+    <ul class="flex justify-evenly items-center ">
+      <li class="p-5"><a href="/">Home</a> </li>
+      <li class="p-5"><a href="">New</a></li>
+      <li class="p-5"><a href="">Popular</a></li>
+      <li class="p-5"><a href="">Trending</a></li>
+      <li class="p-5"><a href="">Categories</a></li>
+    </ul>
+  </nav>
+  <!-- NAVBAR
+     END
+ -->
+ <!-- center content start  row-6 col-4 -->
+  <div class="grid  grid-rows-[repeat(5,200px)] grid-cols-3 gap-10 mt-10">
 
-  The Bright Future of Web 3.0?
+  <img class="row-start-1 row-end-3 col-start-1 col-end-3 bg-cover h-full" src="/assets/images/image-web-3-desktop.jpg" alt="">
 
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
+  <div class="row-start-1 row-end-4 col-start-3 flex flex-col justify-evenly h-full px-4 bg-black text-white">
+    <div class="">
 
-  Read more
+      <h2 class="text-4xl font-bold pb-12 text-orange-300 ">New</h2>
+      <h3 class="text-2xl font-bold">Hydrogen VS Electric Cars</h3>
+      <p class="text-gray-400">Will hydrogen-fueled cars ever catch up to EVs?</p>
+      <span class=" w-full h-[1px] block bg-gray-400 relative mt-5"></span>
+    </div>
 
-  New 
+    <div class="">
+      <h3  class="text-2xl font-bold">The Downsides of AI Artistry</h3>
+      <p class="text-gray-400">What are the possible adverse effects of on-demand AI image generation?</p>
+      <span class=" w-full h-[1px] block bg-gray-400 relative mt-5"></span>
+    </div>
 
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
+    <div class="">
+      <h3  class="text-2xl font-bold">Is VC Funding Drying Up?</h3>
+      <p class="text-gray-400">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+      <span class=" w-full h-[1px] block bg-gray-400 relative mt-5"></span>
+    </div>
 
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <h1 class="text-6xl font-extrabold">The Bright Future of Web 3.0?</h1>
+
+  <div class="">
+    <p class="text-gray-500">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+    But is it really fulfilling its promise?</p>
+  <button class="w-36  h-10 bg-red-400 uppercase mt-7 text-white tracking-widest">read more</button>
+  </div>
+
+  <!-- box 01 start -->
+  <div class="flex">
+
+    <img src="/assets/images/image-top-laptops.jpg" alt="">
+    <div class="flex flex-col justify-evenly py-4 pl-4">
+      <span class="text-4xl font-bold text-gray-400">01</span>
+      <h3 class="font-bold">Reviving Retro PCs</h3>
+      <p>What happens when old PCs are given modern upgrades?</p>
+    </div>
+
+  </div>
+  <!-- box 01 end -->
+  <!-- box 02  start-->
+  <div class=" flex ">
+    <img src="/assets/images/image-retro-pcs.jpg" alt="">
+
+    <div  class="flex flex-col justify-evenly py-4 pl-4">
+      <span class="text-4xl font-bold text-gray-400">02</span>
+      <h3 class="font-bold">Top 10 Laptops of 2022</h3>
+      <p>Our best picks for various needs and budgets.</p>
+    </div>
+
+  </div>
+  <!-- box 02 end -->
+  <!-- box 03  start-->
+  <div class="flex">
+
+    <img src="/assets/images/image-gaming-growth.jpg" alt="">
+    <div  class="flex flex-col justify-evenly py-4 pl-4">
+      <span class="text-4xl font-bold text-gray-400">03</span>
+      <h3 class="font-bold">The Growth of Gaming</h3>
+      <p>How the pandemic has sparked fresh opportunities.</p>
+    </div>
+
+  </div>
+  <!-- box 03 end -->
+  </div>
+  <!-- center
+    content
+    end
+  -->
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Prabhjeet Singh</a>.
+  </footer>
 </body>
+
 </html>
+
