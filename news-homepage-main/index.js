@@ -1,5 +1,8 @@
-const Btn=document.querySelector('#btn')
-const links=document.querySelector('#links')
+const Btn=document.querySelector('#btn');
+const links=document.querySelector('#links');
+const img=document.querySelector('#img');
+const newContent=document.querySelector('#new-content');
+
 Btn.addEventListener('click',()=>{
     links.classList.toggle('show-links')
     if(links.classList.contains('show-links')){
@@ -12,7 +15,7 @@ Btn.addEventListener('click',()=>{
     }
     else{
         Btn.style.backgroundImage='url(/assets/images/icon-menu.svg)';
-        Btn.style.position="block"
+        // Btn.style.position="block"
 
         links.classList.remove('show-links')
         links.classList.add('hide-links')
@@ -21,6 +24,21 @@ Btn.addEventListener('click',()=>{
     }
     
 })
+window.addEventListener("scroll", function() {
+    const imgRect = img.getBoundingClientRect();
+    const newContentRect =newContent.getBoundingClientRect();
+  
+    if (newContentRect.top < window.innerHeight && newContentRect.bottom > 0 || imgRect.top < window.innerHeight && imgRect.bottom > 0) {
+      Btn.style.backgroundImage ='url(/assets/images/icon-menu-white.svg)';
+    }
+    else{
+        Btn.style.backgroundImage='url(/assets/images/icon-menu.svg)';
+
+
+    }
+   
+  });
+
 
 // window.addEventListener('resize',()=>{
 //     if(window.innerWidth >=640){
