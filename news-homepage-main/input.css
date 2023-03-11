@@ -8,5 +8,8 @@
     .hide-links{
         @apply hidden;
     }
+    .border{
+        @apply border-4 border-red-300 !important;
+    }
 
 }
