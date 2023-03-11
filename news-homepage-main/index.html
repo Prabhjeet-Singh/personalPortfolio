@@ -11,17 +11,6 @@
   <title> News homepage</title>
   <link rel="stylesheet" href="output.css">
   
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-    
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-    </style>
 </head>
 
 <body class="xl:px-[10vw] md:px-[5vw] py-[5vh] px-[2vw] cursor-default ">
@@ -33,7 +22,7 @@
     <div class="flex w-screen justify-between items-center px-4">
 
       <span class="text-6xl font-extrabold">W.</span>
-      <button class=" sm:hidden w-10 h-10 bg-cover  bg-no-repeat bg-[url('/assets/images/icon-menu.svg')] top-8 right-5 max-sm:z-10 " id="btn"></button>
+      <button class="fixed sm:hidden w-10 h-10 bg-cover  bg-no-repeat bg-[url('/assets/images/icon-menu.svg')] top-9 right-5 max-sm:z-10 " id="btn"></button>
     </div>
     <ul class="sm:flex  sm:z-50 justify-evenly items-center hide-links  " id="links">
       <li class="p-5 hover:text-orange-400"><a href="/">Home</a> </li>
@@ -47,7 +36,7 @@
     END
   -->
   <!-- center content start  row-5 col-3 -->
-  <div class="grid   sm:grid-cols-3 xl:gap-10 gap-5 mt-24 w-full ">
+  <div class="grid   sm:grid-cols-3 xl:gap-10 gap-5 mt-9 ">
     
     <img class="sm:row-start-1 sm:row-end-3 sm:col-start-1 sm:col-end-3 bg-cover h-full" id="img" src="/assets/images/image-web-3-desktop.jpg" alt="">
     
@@ -124,9 +113,9 @@
   end
 -->
 
-<footer class="attribution mt-10">
-  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-  Coded by <a href="#">Prabhjeet Singh</a>.
+<footer class="text-[11px] mt-10 text-center">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-blue-600">Frontend Mentor</a>.
+  Coded by <a href="#" class="text-blue-600">Prabhjeet Singh</a>.
 </footer>
 </body>
 

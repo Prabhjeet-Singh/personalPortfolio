@@ -7,7 +7,6 @@ Btn.addEventListener('click',()=>{
     links.classList.toggle('show-links')
     if(links.classList.contains('show-links')){
         Btn.style.backgroundImage='url(/assets/images/icon-menu-close.svg)'
-        Btn.style.position="fixed"
         links.classList.add('show-links')
         links.classList.remove('hide-links')
 
@@ -25,17 +24,17 @@ Btn.addEventListener('click',()=>{
     
 })
 window.addEventListener("scroll", function() {
-    const imgRect = img.getBoundingClientRect();
     const newContentRect =newContent.getBoundingClientRect();
+    if( !links.classList.contains('show-links')){
+
+        if (newContentRect.top < 55 && newContentRect.bottom > 40 ) {
+            Btn.style.backgroundImage ='url(/assets/images/icon-menu-white.svg)';
+        }
+        else{
+            Btn.style.backgroundImage='url(/assets/images/icon-menu.svg)';
+        }
+    }
   
-    if (newContentRect.top < window.innerHeight && newContentRect.bottom > 0 || imgRect.top < window.innerHeight && imgRect.bottom > 0) {
-      Btn.style.backgroundImage ='url(/assets/images/icon-menu-white.svg)';
-    }
-    else{
-        Btn.style.backgroundImage='url(/assets/images/icon-menu.svg)';
-
-
-    }
    
   });
 
