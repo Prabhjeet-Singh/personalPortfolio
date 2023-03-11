@@ -2,25 +2,22 @@ const Btn=document.querySelector('#btn');
 const links=document.querySelector('#links');
 const img=document.querySelector('#img');
 const newContent=document.querySelector('#new-content');
+const readMore=document.querySelector('#read-more');
+const pMore=document.querySelector('#p-more');
 
 Btn.addEventListener('click',()=>{
     links.classList.toggle('show-links')
     if(links.classList.contains('show-links')){
         Btn.style.backgroundImage='url(/assets/images/icon-menu-close.svg)'
-        links.classList.add('show-links')
         links.classList.remove('hide-links')
-
-       
     }
     else{
         Btn.style.backgroundImage='url(/assets/images/icon-menu.svg)';
-        // Btn.style.position="block"
-
-        links.classList.remove('show-links')
         links.classList.add('hide-links')
-
-
     }
+    
+})
+readMore.addEventListener('click',()=>{
     
 })
 window.addEventListener("scroll", function() {
