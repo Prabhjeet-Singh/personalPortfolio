@@ -26,7 +26,6 @@ function App() {
         <input type="text"  value={name} onChange={(e)=>{setName(e.target.value)}} className=''/>
       
    
-    {console.log(name)}
   </div>
       
 
