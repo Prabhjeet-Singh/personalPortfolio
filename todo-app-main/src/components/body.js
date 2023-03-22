@@ -9,7 +9,6 @@ const Body = () => {
         <button className="">All</button>
         <button className="">Active</button>
         <button className="">Completed</button>
-       
       </div>
       <button  className="capitalize">clear Completed</button>
     </div>

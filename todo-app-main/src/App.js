@@ -10,7 +10,7 @@ function App() {
   const [lightMode, setLightMode] = useState(true);
   const [name, setName] = useState("");
   return (
-    <div className=" flex flex-col h-screen bg-black items-center justify-center text-white">
+    <div className=" flex flex-col h-screen bg-CheckBackground bg-['hsl(220, 98%, 61%)']  items-center justify-center text-white">
       <img
         src={lightMode ? bgLightDesktopImg : bgDesktopImg}
         alt="img"
