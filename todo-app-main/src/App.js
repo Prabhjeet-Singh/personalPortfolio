@@ -10,7 +10,7 @@ function App() {
   const [lightMode, setLightMode] = useState(true);
   const [name, setName] = useState("");
   return (
-    <div className=" flex flex-col h-screen bg-CheckBackground bg-['hsl(220, 98%, 61%)']  items-center justify-center text-white">
+    <div className={"flex flex-col h-screen  items-center justify-center gap-6 text-white "+(lightMode?'day':'night')} >
       <img
         src={lightMode ? bgLightDesktopImg : bgDesktopImg}
         alt="img"
@@ -22,7 +22,7 @@ function App() {
         <div className="flex justify-between items-center   max-w-[40rem]">
           <h1 className="uppercase text-4xl text-white">todo</h1>
           <img
-            src={lightMode ? light : dark}
+            src={lightMode ? dark : light}
             alt="mode"
             onClick={() => setLightMode(!lightMode)}
           />
@@ -36,10 +36,10 @@ function App() {
           onChange={(e) => {
             setName(e.target.value);
           }}
-          className=""
+          className="md:min-w-[25rem] min-h-[2.5rem] rounded-md"
         />
       </div>
-      <Body/>
+      <Body lightMode={lightMode}/>
     </div>
   );
 }

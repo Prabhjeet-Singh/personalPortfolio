@@ -1,11 +1,19 @@
-:root {
-    -BrightBlue: hsl(220, 98%, 61%);
-        -CheckBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
-    
 
-}
 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer{
+    .night{
+        @apply  bg-black text-white !important ;
+    }
+    .day{
+        @apply bg-white text-black  !important;
+    }
+    .night-card{
+     @apply bg-slate-800 !important;
+    }
+
+}
