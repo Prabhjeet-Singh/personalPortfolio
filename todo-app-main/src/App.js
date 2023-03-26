@@ -8,9 +8,14 @@ import Body from "./components/Body";
 
 function App() {
   const [lightMode, setLightMode] = useState(true);
+  const [list, setList]=useState([''])
   const [name, setName] = useState("");
+
+  const handleSumbit=()=>({
+  //  setList(name);
+  })
   return (
-    <div className={"flex flex-col h-screen  items-center justify-center gap-6 text-white "+(lightMode?'day':'night')} >
+    <div className={"flex flex-col h-screen   items-center gap-6 text-white  pt-20 "+(lightMode?'day':'night')} >
       <img
         src={lightMode ? bgLightDesktopImg : bgDesktopImg}
         alt="img"
@@ -36,10 +41,11 @@ function App() {
           onChange={(e) => {
             setName(e.target.value);
           }}
-          className="md:min-w-[25rem] min-h-[2.5rem] rounded-md"
+          onSubmit={handleSumbit}
+          className="md:min-w-[25rem] min-h-[2.5rem] rounded-md mt-5 text-black"
         />
       </div>
-      <Body lightMode={lightMode}/>
+      <Body lightMode={lightMode} list={list} />
     </div>
   );
 }
