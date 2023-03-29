@@ -8,11 +8,13 @@ import Body from "./components/Body";
 
 function App() {
   const [lightMode, setLightMode] = useState(true);
-  const [list, setList]=useState([''])
+  const [list, setList]=useState([])
   const [name, setName] = useState("");
 
-  const handleSumbit=()=>({
-  //  setList(name);
+  const handleSubmit=(e)=>({
+  
+
+  
   })
   return (
     <div className={"flex flex-col h-screen   items-center gap-6 text-white  pt-20 "+(lightMode?'day':'night')} >
@@ -34,16 +36,15 @@ function App() {
         </div>
 
         {/* navbar end */}
+       <form onSubmit={(e)=>handleSubmit(e)}>
 
         <input
           type="text"
           value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-          onSubmit={handleSumbit}
+          onChange={e =>  setName(e.target.value)}
           className="md:min-w-[25rem] min-h-[2.5rem] rounded-md mt-5 text-black"
-        />
+          />
+          </form>
       </div>
       <Body lightMode={lightMode} list={list} />
     </div>
