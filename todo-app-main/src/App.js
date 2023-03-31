@@ -1,23 +1,50 @@
+import { useReducer, useState } from "react";
 import "./App.css";
 import bgDesktopImg from "./images/bg-desktop-dark.jpg";
 import bgLightDesktopImg from "./images/bg-desktop-light.jpg";
 import light from "./images/icon-sun.svg";
 import dark from "./images/icon-moon.svg";
-import { useState } from "react";
 import Body from "./components/Body";
+import Submit from "./components/Submit";
+import Todo from "./components/Todo";
+
+const ACTIONS={
+  ADD_TODO:'add-todo'
+}
 
 function App() {
   const [lightMode, setLightMode] = useState(true);
-  const [list, setList]=useState([])
+  const [list, setList] = useState([]);
   const [name, setName] = useState("");
+  const [todos,dispatch]=useReducer(reducer,[])
 
-  const handleSubmit=(e)=>({
-  
+function handleSubmit  (e) {
+  e.preventDefault();
+  dispatch({type: ACTIONS.ADD_TODO ,payload:{name:name}})
+  setName('');
+};
 
-  
-  })
+  function reducer(todos,action){
+   switch(action.type){
+    case ACTIONS.ADD_TODO:
+      return [...todos,newTodo(action.payload.name)]
+    default:
+      return
+   }
+   
+  }
+function newTodo(name){
+  return {id:Date.now() ,name:name, complete:false}
+}
+console.log(todos)
+
   return (
-    <div className={"flex flex-col h-screen   items-center gap-6 text-white  pt-20 "+(lightMode?'day':'night')} >
+    <div
+      className={
+        "flex flex-col h-screen   items-center gap-6 text-white  pt-20 " +
+        (lightMode ? "day" : "night")
+      }
+    >
       <img
         src={lightMode ? bgLightDesktopImg : bgDesktopImg}
         alt="img"
@@ -25,28 +52,11 @@ function App() {
       />
 
       <div className="z-10 max-w-[60rem] ">
-        {/* navbar start */}
-        <div className="flex justify-between items-center   max-w-[40rem]">
-          <h1 className="uppercase text-4xl text-white">todo</h1>
-          <img
-            src={lightMode ? dark : light}
-            alt="mode"
-            onClick={() => setLightMode(!lightMode)}
-          />
-        </div>
-
-        {/* navbar end */}
-       <form onSubmit={(e)=>handleSubmit(e)}>
-
-        <input
-          type="text"
-          value={name}
-          onChange={e =>  setName(e.target.value)}
-          className="md:min-w-[25rem] min-h-[2.5rem] rounded-md mt-5 text-black"
-          />
-          </form>
+        <Todo lightMode={lightMode} setLightMode={setLightMode} light={light} dark={dark}/>
+        <Submit name={name} setName={setName} handleSubmit={handleSubmit} />
       </div>
-      <Body lightMode={lightMode} list={list} />
+
+      <Body lightMode={lightMode} list={list} todos={todos}/>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import React from "react";
+import List from './List';
 
-const Body = ({lightMode,list}) => {
+const Body = ({lightMode,todos}) => {
   return <div className={"md:max-w-[35rem] min-h-[30vh] bg-red-300  z-10 flex flex-col justify-between shadow-2xl rounded-md "+(lightMode?'day':'night-card')}>
-    <span className="self-center">{list}</span>
+    <List todos={todos}/>
+    
     <div className="grid  grid-flow-col">
       <span className="capitalize">items left</span>
       <div className="grid gap-2 grid-cols-3 mr-3">
