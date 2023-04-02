@@ -53,10 +53,10 @@ console.log(todos)
 
       <div className="z-10 max-w-[60rem] ">
         <Todo lightMode={lightMode} setLightMode={setLightMode} light={light} dark={dark}/>
-        <Submit name={name} setName={setName} handleSubmit={handleSubmit} />
+        <Submit name={name} setName={setName} handleSubmit={handleSubmit} lightMode={lightMode} />
       </div>
 
-      <Body lightMode={lightMode} list={list} todos={todos}/>
+      <Body lightMode={lightMode} list={list} todos={todos} />
     </div>
   );
 }
