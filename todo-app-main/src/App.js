@@ -9,12 +9,12 @@ import Submit from "./components/Submit";
 import Todo from "./components/Todo";
 
 const ACTIONS={
-  ADD_TODO:'add-todo'
+  ADD_TODO:'add-todo',
+  DEL_TODO:'del-todo'
 }
 
 function App() {
   const [lightMode, setLightMode] = useState(true);
-  const [list, setList] = useState([]);
   const [name, setName] = useState("");
   const [todos,dispatch]=useReducer(reducer,[])
 
@@ -56,7 +56,7 @@ console.log(todos)
         <Submit name={name} setName={setName} handleSubmit={handleSubmit} lightMode={lightMode} />
       </div>
 
-      <Body lightMode={lightMode} list={list} todos={todos} />
+      <Body lightMode={lightMode}  todos={todos} />
     </div>
   );
 }
