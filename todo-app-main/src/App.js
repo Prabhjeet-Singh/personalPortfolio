@@ -8,9 +8,10 @@ import Body from "./components/Body";
 import Submit from "./components/Submit";
 import Todo from "./components/Todo";
 
-const ACTIONS={
+export const ACTIONS={
   ADD_TODO:'add-todo',
-  DEL_TODO:'del-todo'
+  DEL_TODO:'del-todo',
+  CHECK_TODO:'check-todo'
 }
 
 function App() {
@@ -24,10 +25,21 @@ function handleSubmit  (e) {
   setName('');
 };
 
+
   function reducer(todos,action){
    switch(action.type){
     case ACTIONS.ADD_TODO:
       return [...todos,newTodo(action.payload.name)]
+    case ACTIONS.DEL_TODO:
+      return(todos.filter(todo=>todo.id!==action.payload.id))
+    case ACTIONS.CHECK_TODO:
+      return todos.map((todo)=>{
+        if(todo.id===action.payload.id){
+          console.log(todo.action.complete)
+          return todo.action.complete(!todo.action.complete)
+        }
+        return todo
+      })
     default:
       return
    }
@@ -56,7 +68,7 @@ console.log(todos)
         <Submit name={name} setName={setName} handleSubmit={handleSubmit} lightMode={lightMode} />
       </div>
 
-      <Body lightMode={lightMode}  todos={todos} />
+      <Body lightMode={lightMode}  todos={todos} dispatch={dispatch} />
     </div>
   );
 }

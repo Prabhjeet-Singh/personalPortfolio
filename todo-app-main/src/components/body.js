@@ -1,9 +1,9 @@
 import React from "react";
 import List from './List';
 
-const Body = ({lightMode,todos}) => {
+const Body = ({lightMode,todos,dispatch}) => {
   return <div className={"md:max-w-[35rem] min-h-[30vh] bg-red-300  z-10 flex flex-col justify-between shadow-2xl rounded-md "+(lightMode?'day':'night-card')}>
-    <List todos={todos} lightMode={lightMode}/>
+    <List todos={todos} lightMode={lightMode} dispatch={dispatch} />
     
     <div className="grid  grid-flow-col">
       <span className="capitalize">items left</span>
