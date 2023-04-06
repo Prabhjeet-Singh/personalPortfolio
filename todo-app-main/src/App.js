@@ -33,13 +33,18 @@ function handleSubmit  (e) {
     case ACTIONS.DEL_TODO:
       return(todos.filter(todo=>todo.id!==action.payload.id))
     case ACTIONS.CHECK_TODO:
-      return todos.map((todo)=>{
-        if(todo.id===action.payload.id){
-          console.log(todo.action.complete)
-          return todo.action.complete(!todo.action.complete)
-        }
-        return todo
-      })
+      return (
+        todos.map((todo)=>{
+          if(todo.id===action.payload.id){
+            return {...todo,complete:!todo.complete}
+          }
+          else{
+            return todo
+          }
+        })
+      )
+        
+      
     default:
       return
    }

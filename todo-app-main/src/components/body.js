@@ -6,7 +6,7 @@ const Body = ({lightMode,todos,dispatch}) => {
     <List todos={todos} lightMode={lightMode} dispatch={dispatch} />
     
     <div className="grid  grid-flow-col">
-      <span className="capitalize">items left</span>
+      <span className="capitalize">{todos.length?todos.length : "0"} items left</span>
       <div className="grid gap-2 grid-cols-3 mr-3">
         <button className="capitalize">All</button>
         <button className="capitalize">Active</button>
