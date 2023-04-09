@@ -11,13 +11,17 @@ import Todo from "./components/Todo";
 export const ACTIONS={
   ADD_TODO:'add-todo',
   DEL_TODO:'del-todo',
-  CHECK_TODO:'check-todo'
+  CHECK_TODO:'check-todo',
+  ACTIVE_TODO:'active-todo',
+  COMPLETED_TODO:'completed-todo',
+  ALL_TODO:'all-todo'
 }
 
 function App() {
   const [lightMode, setLightMode] = useState(true);
   const [name, setName] = useState("");
-  const [todos,dispatch]=useReducer(reducer,[])
+  const initialState=[]
+  const [todos,dispatch]=useReducer(reducer,initialState)
 
 function handleSubmit  (e) {
   e.preventDefault();
@@ -29,6 +33,7 @@ function handleSubmit  (e) {
   function reducer(todos,action){
    switch(action.type){
     case ACTIONS.ADD_TODO:
+      
       return [...todos,newTodo(action.payload.name)]
     case ACTIONS.DEL_TODO:
       return(todos.filter(todo=>todo.id!==action.payload.id))
@@ -43,7 +48,12 @@ function handleSubmit  (e) {
           }
         })
       )
-        
+    case ACTIONS.ACTIVE_TODO:
+      return(todos.filter(todo=>todo.complete===false))
+    case ACTIONS.COMPLETED_TODO:
+      return(todos.filter(todo=>todo.complete!==false))
+    case ACTIONS.ALL_TODO:
+      return initialState
       
     default:
       return
@@ -53,7 +63,6 @@ function handleSubmit  (e) {
 function newTodo(name){
   return {id:Date.now() ,name:name, complete:false}
 }
-console.log(todos)
 
   return (
     <div
@@ -73,7 +82,7 @@ console.log(todos)
         <Submit name={name} setName={setName} handleSubmit={handleSubmit} lightMode={lightMode} />
       </div>
 
-      <Body lightMode={lightMode}  todos={todos} dispatch={dispatch} />
+      <Body lightMode={lightMode}  todos={todos}  dispatch={dispatch} />
     </div>
   );
 }
