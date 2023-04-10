@@ -49,11 +49,15 @@ function handleSubmit  (e) {
         })
       )
     case ACTIONS.ACTIVE_TODO:
+      
+      
       return(todos.filter(todo=>todo.complete===false))
     case ACTIONS.COMPLETED_TODO:
+
       return(todos.filter(todo=>todo.complete!==false))
     case ACTIONS.ALL_TODO:
-      return initialState
+
+      return todos
       
     default:
       return
