@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import {useReducer, useState } from "react";
 import "./App.css";
 import bgDesktopImg from "./images/bg-desktop-dark.jpg";
 import bgLightDesktopImg from "./images/bg-desktop-light.jpg";
@@ -21,43 +21,42 @@ function App() {
   const [lightMode, setLightMode] = useState(true);
   const [name, setName] = useState("");
   const initialState=[]
+  const [data,setData]=useState([]);
   const [todos,dispatch]=useReducer(reducer,initialState)
 
-function handleSubmit  (e) {
+function handleSubmit (e) {
   e.preventDefault();
   dispatch({type: ACTIONS.ADD_TODO ,payload:{name:name}})
+    setData([...todos])
   setName('');
+  console.log(data)
 };
 
-
-  function reducer(todos,action){
+  function reducer(state,action){
    switch(action.type){
     case ACTIONS.ADD_TODO:
       
-      return [...todos,newTodo(action.payload.name)]
+      return [...state,newTodo(action.payload.name)]
     case ACTIONS.DEL_TODO:
-      return(todos.filter(todo=>todo.id!==action.payload.id))
+      return(state.filter(todo=>todo.id!==action.payload.id))
     case ACTIONS.CHECK_TODO:
       return (
-        todos.map((todo)=>{
+        state.map((todo)=>{
           if(todo.id===action.payload.id){
             return {...todo,complete:!todo.complete}
           }
           else{
-            return todo
+            return data
           }
         })
       )
-    case ACTIONS.ACTIVE_TODO:
-      
-      
-      return(todos.filter(todo=>todo.complete===false))
+    case ACTIONS.ACTIVE_TODO:      
+      return(data.filter(todo=>todo.complete===false))
     case ACTIONS.COMPLETED_TODO:
-
-      return(todos.filter(todo=>todo.complete!==false))
+      return(data.filter(todo=>todo.complete!==false))
     case ACTIONS.ALL_TODO:
 
-      return todos
+      return state
       
     default:
       return
