@@ -51,7 +51,10 @@ function handleSubmit (e) {
         })
       )
     case ACTIONS.ACTIVE_TODO:      
-      return(data.filter(todo=>todo.complete===false))
+      return(
+        
+        data.filter(todo=>todo.complete===false)
+        )
     case ACTIONS.COMPLETED_TODO:
       return(data.filter(todo=>todo.complete!==false))
     case ACTIONS.ALL_TODO:
