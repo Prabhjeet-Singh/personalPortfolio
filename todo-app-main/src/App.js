@@ -21,15 +21,12 @@ function App() {
   const [lightMode, setLightMode] = useState(true);
   const [name, setName] = useState("");
   const initialState=[]
-  const [data,setData]=useState([]);
   const [todos,dispatch]=useReducer(reducer,initialState)
 
 function handleSubmit (e) {
   e.preventDefault();
   dispatch({type: ACTIONS.ADD_TODO ,payload:{name:name}})
-    setData([...todos])
   setName('');
-  console.log(data)
 };
 
   function reducer(state,action){
@@ -46,17 +43,17 @@ function handleSubmit (e) {
             return {...todo,complete:!todo.complete}
           }
           else{
-            return data
+            return todo
           }
         })
       )
     case ACTIONS.ACTIVE_TODO:      
       return(
         
-        data.filter(todo=>todo.complete===false)
+        state.filter(todo=>todo.complete===false)
         )
     case ACTIONS.COMPLETED_TODO:
-      return(data.filter(todo=>todo.complete!==false))
+      return(state.filter(todo=>todo.complete!==false))
     case ACTIONS.ALL_TODO:
 
       return state
