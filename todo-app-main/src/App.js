@@ -1,10 +1,10 @@
-import {useReducer, useState } from "react";
+import {useReducer, useState,useEffect } from "react";
 import "./App.css";
 import bgDesktopImg from "./images/bg-desktop-dark.jpg";
 import bgLightDesktopImg from "./images/bg-desktop-light.jpg";
 import light from "./images/icon-sun.svg";
 import dark from "./images/icon-moon.svg";
-import Body from "./components/Body";
+import Body from "./components/MainBody";
 import Submit from "./components/Submit";
 import Todo from "./components/Todo";
 
@@ -18,27 +18,38 @@ export const ACTIONS={
 }
 
 function App() {
+
   const [lightMode, setLightMode] = useState(true);
   const [name, setName] = useState("");
-  const initialState=[]
+  const initialState={
+    list:[],
+    filterList:[]
+  }
+  // const [filterList,setFilterList]=useState()
   const [todos,dispatch]=useReducer(reducer,initialState)
+  // useEffect(()=>{
+  //   dispatch({type: ACTIONS.ADD_TODO ,payload:{name:name}})
+    
+  // },[name])
+  
+  function handleSubmit (e) {
+    e.preventDefault();
+    dispatch({type: ACTIONS.ADD_TODO ,payload:{name:name}})
 
-function handleSubmit (e) {
-  e.preventDefault();
-  dispatch({type: ACTIONS.ADD_TODO ,payload:{name:name}})
-  setName('');
+    setName('');
 };
 
   function reducer(state,action){
    switch(action.type){
     case ACTIONS.ADD_TODO:
       
-      return [...state,newTodo(action.payload.name)]
+      return [...state.list,...state.filterList,newTodo(action.payload.name)]
+
     case ACTIONS.DEL_TODO:
-      return(state.filter(todo=>todo.id!==action.payload.id))
+      return(state.list.filter(todo=>todo.id!==action.payload.id))
     case ACTIONS.CHECK_TODO:
       return (
-        state.map((todo)=>{
+        state.list.map((todo)=>{
           if(todo.id===action.payload.id){
             return {...todo,complete:!todo.complete}
           }
@@ -48,12 +59,14 @@ function handleSubmit (e) {
         })
       )
     case ACTIONS.ACTIVE_TODO:      
-      return(
-        
-        state.filter(todo=>todo.complete===false)
-        )
+    console.log(state.filterList)
+      return{
+       filterList.filter(todo=>todo.complete),
+        }
     case ACTIONS.COMPLETED_TODO:
-      return(state.filter(todo=>todo.complete!==false))
+      return(
+        state.List.filter(todo=>!todo.complete)
+        )
     case ACTIONS.ALL_TODO:
 
       return state
@@ -85,7 +98,7 @@ function newTodo(name){
         <Submit name={name} setName={setName} handleSubmit={handleSubmit} lightMode={lightMode} />
       </div>
 
-      <Body lightMode={lightMode}  todos={todos}  dispatch={dispatch} />
+      <Body lightMode={lightMode}  todos={todos.list}  dispatch={dispatch} />
     </div>
   );
 }
