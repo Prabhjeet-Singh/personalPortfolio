@@ -36,7 +36,7 @@ const WhatsNew = () => (
         </div>
       </motion.div>
       <motion.div
-      variants={planetVariants('left')}
+      variants={planetVariants('right')}
       className={`flex-1 ${styles.flexCenter}`}
       >
         <img
