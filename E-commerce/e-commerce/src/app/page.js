@@ -1,12 +1,15 @@
 import { createClient } from "next-sanity";
-export default function Home({ pets }) {
+export default async function   IndexPage({pets}) {
+const data= await getData()
   return (
     <>
       <header>
         <h1>Sanity + Next.js</h1>
       </header>
       <main>
-        <h2>pets</h2>
+        {data.map((data)=>data._type)}
+        
+        {/* <h2>pets</h2>
         {pets.length > 0 && (
           <ul>
             {pets.map((pet) => (
@@ -28,25 +31,20 @@ export default function Home({ pets }) {
               correctly
             </p>
           </div>
-        )}
+        )} */}
       </main>
     </>
   );
 }
 
 const client = createClient({
-  projectId: "ao302kp2",
+  projectId: "6xf49nol",
   dataset: "production",
-  apiVersion: "2023-7-14",
+  apiVersion: `2023-07-16`,
   useCdn: false
 });
 
-export async function getStaticProps() {
+export async function getData() {
   const pets = await client.fetch(`*[_type == "pet"]`);
-
-  return {
-    props: {
-      pets
-    }
-  };
+  
 }
