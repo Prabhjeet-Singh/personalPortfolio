@@ -1,7 +1,10 @@
 import React from "react";
+import ShopNow from "./ShopNow";
 
 const AllProduts = () => {
-  return <div>AllProduts</div>;
+  return( <div>
+    <ShopNow/>
+    </div>);
 };
 
 export default AllProduts;
