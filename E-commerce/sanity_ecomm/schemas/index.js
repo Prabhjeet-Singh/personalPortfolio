@@ -1,4 +1,6 @@
 // schemas/index.js
-import pet from './pet'
+import electronics from './electronics'
+import clothes from './clothes'
+import hardware from './hardware'
 
-export const schemaTypes = [pet]
+export const schemaTypes = [electronics, clothes, hardware]
