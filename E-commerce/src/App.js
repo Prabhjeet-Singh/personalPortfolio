@@ -11,19 +11,40 @@ import Cart from "./components/Cart";
 
 
 function App() {
- const [pet,setPet]=useState([])
+ const [hardware,setHardware]=useState([])
+
 
  useEffect(()=>{
-   client.fetch(`*[_type == "pet"]`)
-   .then((data)=>setPet(data))
-   .catch(console.error)
- },[])
-  return (
-    <>
+  async function fetchingData(){
+    try{
+      const data=await client.fetch('*[_type == "hardware"]');
+      if(data!=null){
+        setHardware(data);
+      }
+    }
+    catch(error){
+      console.error("This error occur in try catch block"+error);
+
+    }
+  }
+  fetchingData();
+},[])
+return (
+  <>
+   {hardware.map(item => (
+    
+          <li key={item._id}>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            
+            <img src={item.image.asset._ref} alt={item.title} />
+            {console.log(item.image.asset._ref)}
+          </li>
+        ))}
    <BrowserRouter>
     <NavbarStore/>
    <Routes>
-    <Route path='/' element={<AllProducts pet={pet}/>}/>
+    <Route path='/' element={<AllProducts />}/>
     <Route path='/categories' element={<Categories/>}/>
     <Route path='/wishlist' element={<Wishlist/>}/>
     <Route path='/cart' element={<Cart/>}/>
