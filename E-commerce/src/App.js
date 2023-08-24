@@ -37,8 +37,8 @@ return (
             <h2>{item.title}</h2>
             <p>{item.description}</p>
             
-            <img src={item.image.asset._ref} alt={item.title} />
-            {console.log(item.image.asset._ref)}
+            <img src={item.image.asset._ref} alt={item.title} className='w-[20rem] h-[20rem]' />
+            {console.log(item.image.asset.url)}
           </li>
         ))}
    <BrowserRouter>
