@@ -605,20 +605,20 @@ video {
   height: 2.25rem;
 }
 
-.h-\[70vh\] {
-  height: 70vh;
-}
-
-.h-\[\] {
-  height: ;
-}
-
 .h-\[20rem\] {
   height: 20rem;
 }
 
+.h-\[70vh\] {
+  height: 70vh;
+}
+
 .w-60 {
   width: 15rem;
+}
+
+.w-\[20rem\] {
+  width: 20rem;
 }
 
 .w-\[30rem\] {
@@ -635,14 +635,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[20rem\] {
-  width: 20rem;
 }
 
 .items-center {

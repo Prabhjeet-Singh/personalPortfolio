@@ -17,7 +17,12 @@ function App() {
  useEffect(()=>{
   async function fetchingData(){
     try{
-      const data=await client.fetch('*[_type == "hardware"]');
+      const data=await client.fetch(`*[_type == "hardware"] {
+        _id,
+        title,
+        description,
+        "imageUrl": image.asset->url
+      }`);
       if(data!=null){
         setHardware(data);
       }
@@ -36,9 +41,9 @@ return (
           <li key={item._id}>
             <h2>{item.title}</h2>
             <p>{item.description}</p>
-            
-            <img src={item.image.asset._ref} alt={item.title} className='w-[20rem] h-[20rem]' />
-            {console.log(item.image.asset.url)}
+             
+            <img src={item.imageUrl} alt={item.title} className='w-[20rem] h-[20rem]' />
+            {console.log(item.image.imageUrl)} 
           </li>
         ))}
    <BrowserRouter>

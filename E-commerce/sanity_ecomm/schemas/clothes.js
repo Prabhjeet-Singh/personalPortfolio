@@ -19,9 +19,9 @@ export default{
             title:'Description'
         },
         {
-            name:'img',
+            name:'image',
             type:'image',
-            title:'Img'
+            title:'Image'
         },
         
     ]

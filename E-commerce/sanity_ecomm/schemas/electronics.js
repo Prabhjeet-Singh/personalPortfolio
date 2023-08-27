@@ -5,9 +5,9 @@ export default {
   title: 'Electronics',
   fields: [
     {
-      name: 'name',
+      name: 'title',
       type: 'string',
-      title: 'Name',
+      title: 'Title',
     },
     {
       name: 'slug',
@@ -20,7 +20,7 @@ export default {
       title: 'Description',
     },
     {
-      name: 'Image',
+      name: 'image',
       type: 'image',
       title: 'Image',
     },
