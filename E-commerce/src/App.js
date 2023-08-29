@@ -17,12 +17,13 @@ function App() {
  useEffect(()=>{
   async function fetchingData(){
     try{
-      const data=await client.fetch(`*[_type == "hardware"] {
+      const data=await client.fetch(`*[_type == "electronics"] {
         _id,
         title,
         description,
         "imageUrl": image.asset->url
-      }`);
+      }
+      `);
       if(data!=null){
         setHardware(data);
       }
@@ -43,7 +44,7 @@ return (
             <p>{item.description}</p>
              
             <img src={item.imageUrl} alt={item.title} className='w-[20rem] h-[20rem]' />
-            {console.log(item.image.imageUrl)} 
+            {console.log(item.imageUrl)} 
           </li>
         ))}
    <BrowserRouter>
