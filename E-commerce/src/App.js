@@ -12,20 +12,44 @@ import Cart from "./components/Cart";
 
 function App() {
  const [hardware,setHardware]=useState([])
+ const [electronics,setElectronics]=useState([])
+ const [clothes,setClothes]=useState([])
+ 
 
 
  useEffect(()=>{
   async function fetchingData(){
     try{
-      const data=await client.fetch(`*[_type == "electronics"] {
+      const hardwareData=await client.fetch(`*[_type == "hardware"] {
         _id,
         title,
         description,
         "imageUrl": image.asset->url
       }
       `);
-      if(data!=null){
-        setHardware(data);
+      const clothesData=await client.fetch(`*[_type == "clothes"] {
+        _id,
+        title,
+        description,
+        "imageUrl": image.asset->url
+      }
+      `); 
+      const electronicsData=await client.fetch(`*[_type == "electronics"] {
+        _id,
+        title,
+        description,
+        "imageUrl": image.asset->url
+      }
+      `);
+      if(hardwareData!=null){
+        setHardware(hardwareData);
+      }
+      if(clothesData!=null){
+        setClothes(clothesData);
+
+      }
+      if(electronicsData!=null){
+        setElectronics(electronicsData);
       }
     }
     catch(error){
