@@ -61,7 +61,7 @@ function App() {
 },[])
 return (
   <>
-   {hardware.map(item => (
+   {/* {hardware.map(item => (
     
           <li key={item._id}>
             <h2>{item.title}</h2>
@@ -70,11 +70,11 @@ return (
             <img src={item.imageUrl} alt={item.title} className='w-[20rem] h-[20rem]' />
             {console.log(item.imageUrl)} 
           </li>
-        ))}
+        ))} */}
    <BrowserRouter>
     <NavbarStore/>
    <Routes>
-    <Route path='/' element={<AllProducts />}/>
+    <Route path='/' element={<AllProducts hardware={hardware} electronics={electronics} clothes={clothes}/>}/>
     <Route path='/categories' element={<Categories/>}/>
     <Route path='/wishlist' element={<Wishlist/>}/>
     <Route path='/cart' element={<Cart/>}/>
