@@ -25,6 +25,35 @@
   --tw-content: '';
 }
 
+
+@keyframes underlines {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.underlines-animation::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px; /* Set the desired underline height */
+  background-color: #333; /* Set the underline color */
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s ease; /* Add a smooth transition for the animation */
+}
+
+.underlines-animation:hover::after {
+  animation: underline 1s linear infinite; /* Apply the underline animation on hover */
+}
+
+
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -584,13 +613,34 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .m-3 {
   margin: 0.75rem;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .block {
@@ -621,8 +671,16 @@ video {
   height: 70vh;
 }
 
-.min-h-\[10rem\] {
-  min-height: 10rem;
+.h-\[8rem\] {
+  height: 8rem;
+}
+
+.h-\[6rem\] {
+  height: 6rem;
+}
+
+.h-\[4rem\] {
+  height: 4rem;
 }
 
 .min-h-\[15rem\] {
@@ -657,20 +715,28 @@ video {
   width: 8rem;
 }
 
-.w-screen {
-  width: 100vw;
+.w-full {
+  width: 100%;
 }
 
-.min-w-\[15rem\] {
-  min-width: 15rem;
+.w-screen {
+  width: 100vw;
 }
 
 .min-w-\[20rem\] {
   min-width: 20rem;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .scroll-m-1 {
   scroll-margin: 0.25rem;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .items-center {
@@ -689,12 +755,26 @@ video {
   gap: 5rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.space-x-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-x-scroll {
@@ -735,6 +815,16 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-pink-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
+}
+
+.bg-pink-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
 }
 
 .bg-no-repeat {
@@ -783,12 +873,24 @@ video {
   line-height: 1.75rem;
 }
 
+.text-\[4rem\] {
+  font-size: 4rem;
+}
+
+.text-\[2rem\] {
+  font-size: 2rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-\[4rem\] {
+  font-weight: 4rem;
 }
 
 .text-pink-400 {
@@ -804,6 +906,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .shadow-lg {
@@ -825,4 +931,42 @@ video {
 .hover\:text-pink-500:hover {
   --tw-text-opacity: 1;
   color: rgb(236 72 153 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
+@media (min-width: 640px) {
+  .sm\:gap-3 {
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:gap-7 {
+    gap: 1.75rem;
+  }
+
+  .md\:gap-20 {
+    gap: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:gap-9 {
+    gap: 2.25rem;
+  }
+
+  .lg\:gap-20 {
+    gap: 5rem;
+  }
+
+  .lg\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .lg\:gap-28 {
+    gap: 7rem;
+  }
 }

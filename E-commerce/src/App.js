@@ -79,8 +79,8 @@ return (
     <Route path='/wishlist' element={<Wishlist/>}/>
     <Route path='/cart' element={<Cart/>}/>
    </Routes>
-   </BrowserRouter>
     <FooterStore/>
+   </BrowserRouter>
    
     </>
   );
