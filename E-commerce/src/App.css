@@ -25,35 +25,6 @@
   --tw-content: '';
 }
 
-
-@keyframes underlines {
-  0% {
-    transform: scaleX(0);
-  }
-  50% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(0);
-  }
-}
-
-.underlines-animation::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px; /* Set the desired underline height */
-  background-color: #333; /* Set the underline color */
-  transform-origin: 0% 50%;
-  transform: scaleX(0);
-  transition: transform 0.3s ease; /* Add a smooth transition for the animation */
-}
-
-.underlines-animation:hover::after {
-  animation: underline 1s linear infinite; /* Apply the underline animation on hover */
-}
-
-
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -613,16 +584,32 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.btnClass {
+  height: 2.25rem;
+  width: 4rem;
+  border-radius: 1rem;
+  border-width: 2px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.btnClass:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(236 72 153 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity));
+}
+
 .m-2 {
   margin: 0.5rem;
 }
 
 .m-3 {
   margin: 0.75rem;
-}
-
-.m-auto {
-  margin: auto;
 }
 
 .mx-4 {
@@ -633,10 +620,6 @@ video {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .mb-3 {
@@ -663,24 +646,12 @@ video {
   height: 20rem;
 }
 
-.h-\[6em\] {
-  height: 6em;
-}
-
-.h-\[70vh\] {
-  height: 70vh;
-}
-
-.h-\[8rem\] {
-  height: 8rem;
-}
-
-.h-\[6rem\] {
-  height: 6rem;
-}
-
 .h-\[4rem\] {
   height: 4rem;
+}
+
+.h-\[6em\] {
+  height: 6em;
 }
 
 .min-h-\[15rem\] {
@@ -693,14 +664,6 @@ video {
 
 .w-\[20rem\] {
   width: 20rem;
-}
-
-.w-\[30rem\] {
-  width: 30rem;
-}
-
-.w-\[40rem\] {
-  width: 40rem;
 }
 
 .w-\[4rem\] {
@@ -751,12 +714,8 @@ video {
   justify-content: space-between;
 }
 
-.gap-20 {
-  gap: 5rem;
-}
-
-.gap-4 {
-  gap: 1rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-5 {
@@ -767,14 +726,8 @@ video {
   gap: 2rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.space-x-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0px * var(--tw-space-x-reverse));
-  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .overflow-x-scroll {
@@ -807,6 +760,11 @@ video {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
+.bg-pink-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
+}
+
 .bg-pink-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(236 72 153 / var(--tw-bg-opacity));
@@ -817,16 +775,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-pink-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
-}
-
-.bg-pink-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
-}
-
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
@@ -835,14 +783,14 @@ video {
   padding: 1rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
-}
-
-.px-40 {
-  padding-left: 10rem;
-  padding-right: 10rem;
 }
 
 .py-4 {
@@ -855,8 +803,16 @@ video {
   padding-bottom: 1rem;
 }
 
+.pl-4 {
+  padding-left: 1rem;
+}
+
 .pr-1 {
   padding-right: 0.25rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-2xl {
@@ -864,8 +820,12 @@ video {
   line-height: 2rem;
 }
 
-.text-\[3rem\] {
-  font-size: 3rem;
+.text-\[1rem\] {
+  font-size: 1rem;
+}
+
+.text-\[2rem\] {
+  font-size: 2rem;
 }
 
 .text-xl {
@@ -873,12 +833,8 @@ video {
   line-height: 1.75rem;
 }
 
-.text-\[4rem\] {
-  font-size: 4rem;
-}
-
-.text-\[2rem\] {
-  font-size: 2rem;
+.font-\[4rem\] {
+  font-weight: 4rem;
 }
 
 .font-bold {
@@ -887,10 +843,6 @@ video {
 
 .font-semibold {
   font-weight: 600;
-}
-
-.font-\[4rem\] {
-  font-weight: 4rem;
 }
 
 .text-pink-400 {
@@ -906,10 +858,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.underline {
-  text-decoration-line: underline;
 }
 
 .shadow-lg {
@@ -933,10 +881,6 @@ video {
   color: rgb(236 72 153 / var(--tw-text-opacity));
 }
 
-.hover\:underline:hover {
-  text-decoration-line: underline;
-}
-
 @media (min-width: 640px) {
   .sm\:gap-3 {
     gap: 0.75rem;
@@ -944,29 +888,53 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:gap-7 {
-    gap: 1.75rem;
-  }
-
   .md\:gap-20 {
     gap: 5rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:gap-9 {
-    gap: 2.25rem;
+  .lg\:h-\[70vh\] {
+    height: 70vh;
   }
 
-  .lg\:gap-20 {
-    gap: 5rem;
-  }
-
-  .lg\:gap-2 {
-    gap: 0.5rem;
+  .lg\:flex-row {
+    flex-direction: row;
   }
 
   .lg\:gap-28 {
     gap: 7rem;
+  }
+
+  .lg\:pr-40 {
+    padding-right: 10rem;
+  }
+}
+
+@media (min-width:1293px) {
+  .wide\:w-\[40rem\] {
+    width: 40rem;
+  }
+
+  .wide\:gap-20 {
+    gap: 5rem;
+  }
+}
+
+@media (min-width:950px) {
+  .mdwide\:w-\[30rem\] {
+    width: 30rem;
+  }
+
+  .mdwide\:pl-20 {
+    padding-left: 5rem;
+  }
+
+  .mdwide\:text-\[1\.5rem\] {
+    font-size: 1.5rem;
+  }
+
+  .mdwide\:text-\[3rem\] {
+    font-size: 3rem;
   }
 }

@@ -60,7 +60,7 @@ function App() {
   fetchingData();
 },[])
 return (
-  <>
+  <div div className='overflow-x-hidden'>
    {/* {hardware.map(item => (
     
           <li key={item._id}>
@@ -82,7 +82,7 @@ return (
     <FooterStore/>
    </BrowserRouter>
    
-    </>
+    </div>
   );
 }
 
