@@ -24,21 +24,24 @@ function App() {
         _id,
         title,
         description,
-        "imageUrl": image.asset->url
+        "imageUrl": image.asset->url,
+        Amount
       }
       `);
       const clothesData=await client.fetch(`*[_type == "clothes"] {
         _id,
         title,
         description,
-        "imageUrl": image.asset->url
+        "imageUrl": image.asset->url,
+        Amount
       }
       `); 
       const electronicsData=await client.fetch(`*[_type == "electronics"] {
         _id,
         title,
         description,
-        "imageUrl": image.asset->url
+        "imageUrl": image.asset->url,
+        Amount
       }
       `);
       if(hardwareData!=null){

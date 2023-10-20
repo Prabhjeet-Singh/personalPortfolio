@@ -1,19 +1,19 @@
 import React from "react";
 
-const CateProducts = ({item}) => {
-  return (<div className="min-w-[20rem] min-h-[15rem] bg-white shadow-lg rounded-xl m-3 flex items-center justify-center">
-    <img src={item.imageUrl} alt={item.title} className='w-[6rem] h-[6em] ' />
-    <div>
-    <h2>{item.title}</h2>
-    <div>
-    {/* <button className="text-white bg-pink-500 w-[4rem] h-9 rounded-2xl border-2 hover:text-pink-500 hover:bg-white hover:border-pink-500">Cart</button> */}
-    <button className="btnClass">Buy</button>
+const CateProducts = ({ item }) => {
+  return (
+    <div className="min-w-[20rem] min-h-[15rem] bg-white shadow-lg rounded-xl m-3 flex items-center justify-center">
+      <img src={item.imageUrl} alt={item.title} className="w-[6rem] h-[6em] " />
+      <div>
+        <h2>{item.title}</h2>
+        <span>${item.Amount}</span>
+        {console.log(item.Amount)}
+        <div>
+          <button className="btnClass">Buy</button>
+        </div>
+      </div>
     </div>
-    </div>
-    {/* <p>{item.description}</p> */}
-
-   
-  </div>);
+  );
 };
 
 export default CateProducts;

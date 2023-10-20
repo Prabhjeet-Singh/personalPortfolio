@@ -24,5 +24,10 @@ export default {
       type: 'image',
       title: 'Image',
     },
+    {
+      name:'Amount',
+      type:'number',
+      title:'Amount'
+    }
   ],
 }

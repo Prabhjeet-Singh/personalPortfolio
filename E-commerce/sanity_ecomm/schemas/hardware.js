@@ -22,6 +22,12 @@ export default{
             name:'image',
             type:'image',
             title:'Image'
+        },
+        {
+            name:'Amount',
+            type:'number',
+            title:'Amount'
         }
+
     ]
 }
