@@ -14,6 +14,7 @@ function App() {
  const [hardware,setHardware]=useState([])
  const [electronics,setElectronics]=useState([])
  const [clothes,setClothes]=useState([])
+ const [categories,setCategories]=useState([])
  
 
 
@@ -44,6 +45,15 @@ function App() {
         Amount
       }
       `);
+      const categoriesData=await client.fetch(`*[_type == "categories"]{
+        _id,
+        title,
+        description,
+        "imageUrl":image.asset->url
+      }`)
+      if(categoriesData!=null){
+        setCategories(categoriesData);
+      }
       if(hardwareData!=null){
         setHardware(hardwareData);
       }
@@ -59,6 +69,7 @@ function App() {
       console.error("This error occur in try catch block"+error);
 
     }
+  
   }
   fetchingData();
 },[])
